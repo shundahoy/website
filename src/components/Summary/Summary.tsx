@@ -1,25 +1,31 @@
 import React from "react";
-
+import CountUp from "react-countup";
 function Summary() {
   return (
-    <div className="wrapper py-20">
+    <div className="wrapper py-20 ">
       <div className="summary min-h-[400px] bg-fixed bg-cover relative flex items-center">
-        <div className="absolute inset-0 bg-blue-900 bg-opacity-50"></div>
+        <div className="absolute inset-0 bg-indigo-900 bg-opacity-50"></div>
         {/* content */}
-        <div className="container mx-auto grid gap-10 py-10 items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-4 relative z-[3]">
+        <div className="container mx-auto grid gap-10 py-10 items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-4 relative z-[3] px-4">
           <div className="text-center text-white">
-            <h1 className="text-5xl font-bold">100%</h1>
+            <h1 className="text-5xl font-bold">
+              <CountUp end={100} />%
+            </h1>
             <h4 className="text-xl mt-4 text-yellow-400">お客様満足度</h4>
             <div className="w-[3em] h-[2px] mx-auto bg-white mt-2"></div>
           </div>
           <div className="text-center text-white">
-            <h1 className="text-5xl font-bold">100%</h1>
+            <h1 className="text-5xl font-bold">
+              <CountUp end={100} />%
+            </h1>
             <h4 className="text-xl mt-4 text-yellow-400">お客様満足度</h4>
             <div className="w-[3em] h-[2px] mx-auto bg-white mt-2"></div>
           </div>
 
           <div className="text-center text-white">
-            <h1 className="text-5xl font-bold">100%</h1>
+            <h1 className="text-5xl font-bold">
+              <CountUp end={100} />%
+            </h1>
             <h4 className="text-xl mt-4 text-yellow-400">お客様満足度</h4>
             <div className="w-[3em] h-[2px] mx-auto bg-white mt-2"></div>
           </div>
