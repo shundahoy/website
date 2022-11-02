@@ -1,5 +1,6 @@
 import React from "react";
 import ChartSection from "./components/ChartSection/ChartSection";
+import Movie from "./components/Movie/Movie";
 import Navbar from "./components/Navbar/Navbar";
 import Products from "./components/Products/Products";
 import Project from "./components/Project/Project";
@@ -16,6 +17,7 @@ function App() {
       <Summary />
       <Project />
       <Products />
+      <Movie />
     </div>
   );
 }
