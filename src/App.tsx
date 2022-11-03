@@ -7,6 +7,7 @@ import Project from "./components/Project/Project";
 import Services from "./components/Services/Services";
 import Summary from "./components/Summary/Summary";
 import TopBanner from "./components/TopBanner/TopBanner";
+import Voice from "./components/Voice/Voice";
 function App() {
   return (
     <div className="">
@@ -18,6 +19,7 @@ function App() {
       <Project />
       <Products />
       <Movie />
+      <Voice />
     </div>
   );
 }
