@@ -2,12 +2,12 @@ import React from "react";
 import Slider from "react-slick";
 
 var settings = {
-  autoPlaySpeed: 3000,
-  autoPlay: true,
+  autoplaySpeed: 3000,
+  autoplay: true,
   dots: false,
   arrows: false,
   infinite: true,
-  speed: 3000,
+  speed: 2000,
   slidesToShow: 1,
   slidesToScroll: 1,
   initialSlide: 1,

@@ -1,4 +1,5 @@
 import React from "react";
+import AboutMe from "./components/AboutMe/AboutMe";
 import ChartSection from "./components/ChartSection/ChartSection";
 import Movie from "./components/Movie/Movie";
 import Navbar from "./components/Navbar/Navbar";
@@ -20,6 +21,7 @@ function App() {
       <Products />
       <Movie />
       <Voice />
+      <AboutMe />
     </div>
   );
 }
