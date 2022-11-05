@@ -12,7 +12,7 @@ const AboutMe = () => {
   return (
     <div className="mt-10">
       <h2 className="text-center text-2xl font-bold pt-10">About ME</h2>
-      <div className="mx-auto h-[3px] w-[5em] bg-white mt-2"></div>
+      <div className="mx-auto h-[3px] w-[5em] bg-white mt-2 text-gray-600"></div>
       <div className="container mx-auto mt-10 px-4 grid grid-cols-1 lg:grid-cols-2 gap-10 place-items-center">
         <div className="h-[260px] w-[260px] rounded-full lg:h-[400px] lg:w-[400px] xl:h-[550px] xl:w-[550px]">
           <img
