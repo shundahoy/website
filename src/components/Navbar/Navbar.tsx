@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link, NavLink } from "react-router-dom";
 export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   return (
@@ -41,31 +41,76 @@ export default function Navbar() {
           >
             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
               <li className="nav-item">
-                <a
-                  className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                  href="#pablo"
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "text-gray-600" : "text-white"
+                  }
+                  to={`/`}
                 >
-                  <i className="fab fa-facebook-square text-lg leading-lg text-white opacity-75"></i>
-                  <span className="ml-2">Share</span>
-                </a>
+                  <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug hover:opacity-75">
+                    <span className="ml-2">HOME</span>
+                  </a>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <a
-                  className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                  href="#pablo"
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "text-gray-600" : "text-white"
+                  }
+                  to={`/about/`}
                 >
-                  <i className="fab fa-twitter text-lg leading-lg text-white opacity-75"></i>
-                  <span className="ml-2">Tweet</span>
-                </a>
+                  <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug hover:opacity-75">
+                    <span className="ml-2">ABOUT</span>
+                  </a>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <a
-                  className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                  href="#pablo"
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "text-gray-600" : "text-white"
+                  }
+                  to={`/service`}
                 >
-                  <i className="fab fa-pinterest text-lg leading-lg text-white opacity-75"></i>
-                  <span className="ml-2">Pin</span>
-                </a>
+                  <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug hover:opacity-75">
+                    <span className="ml-2">SERVICE</span>
+                  </a>
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "text-gray-600" : "text-white"
+                  }
+                  to={`/project`}
+                >
+                  <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug hover:opacity-75">
+                    <span className="ml-2">PROJECT</span>
+                  </a>
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "text-gray-600" : "text-white"
+                  }
+                  to={`/product`}
+                >
+                  <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug hover:opacity-75">
+                    <span className="ml-2">PRODUCT</span>
+                  </a>
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "text-gray-600" : "text-white"
+                  }
+                  to={`/contact`}
+                >
+                  <a className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug hover:opacity-75">
+                    <span className="ml-2">CONTACT</span>
+                  </a>
+                </NavLink>
               </li>
             </ul>
           </div>
