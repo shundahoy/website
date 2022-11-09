@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link, NavLink } from "react-router-dom";
 import PageTop from "../components/PageTop/PageTop";
 const ProductPage = () => {
   return (
@@ -32,7 +32,7 @@ const ProductPage = () => {
                 </p>
                 <div className="flex justify-center">
                   <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-                    Button
+                    <Link to="/">Button</Link>
                   </button>
                 </div>
               </div>
