@@ -7,6 +7,7 @@ import HomePage from "../pages/HomePage";
 import ProductPage from "../pages/ProductPage";
 import ProjectPage from "../pages/ProjectPage";
 import ServiePage from "../pages/ServiePage";
+import ProductDetailPage from "../pages/ProductDetailPage";
 const Router = () => {
   return (
     <Routes>
@@ -17,6 +18,7 @@ const Router = () => {
       <Route path={`/project/`} element={<ProjectPage />} />
       <Route path={`/contact/`} element={<ContactPage />} />
       <Route path={`/project_detail/`} element={<ProjectDetailPage />} />
+      <Route path={`/product_detail/`} element={<ProductDetailPage />} />
     </Routes>
   );
 };
