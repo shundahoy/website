@@ -1,4 +1,5 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 
 var settings = {
@@ -40,60 +41,65 @@ var settings = {
     },
   ],
 };
+
+type DATA = {
+  id: number;
+  client_img: string;
+  client_title: string;
+  client_description: string;
+  created_at: any;
+  updated_at: any;
+};
 const Voice = () => {
+  const [data, setData] = useState<DATA[]>([
+    {
+      id: 0,
+      client_img: "",
+      client_title: "",
+      client_description: "",
+      created_at: "",
+      updated_at: "",
+    },
+  ]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await axios
+        .get("http://127.0.0.1:8000/api/clientreview")
+        .then((res) => {
+          setData(res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
+    fetchData();
+  }, []);
+  if (!data) return <></>;
   return (
     <div className="mt-20 bg-blue-900 text-white">
       <h2 className="text-center text-2xl font-bold pt-10">お客様の声</h2>
       <div className="mx-auto h-[3px] w-[5em] bg-white mt-2"></div>
       <div className="container mx-auto mt-10 px-4 pb-10">
         <Slider {...settings}>
-          <div className="slick_slide item justify-center flex flex-col items-center py-10">
-            <div className="h-[100px] w-[100px] rounded-full ">
-              <img
-                src="https://images.unsplash.com/photo-1461800919507-79b16743b257?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
-                alt=""
-                className="w-full h-full object-cover rounded-full"
-              />
-            </div>
-            <p className="name text-xl font-bold mt-4">葉山 隼人</p>
-            <p className="text-sm mt-4 text-center">
-              これを買ったら学校の成績が上がって部活でもレギュラーになれました、ついでに彼女もできました
-              <br />
-              友達にも勧めたところ、テストの点数が上がったようです。
-            </p>
-          </div>
-
-          <div className="slick_slide item justify-center flex flex-col items-center py-10">
-            <div className="h-[100px] w-[100px] rounded-full ">
-              <img
-                src="https://images.unsplash.com/photo-1461800919507-79b16743b257?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
-                alt=""
-                className="w-full h-full object-cover rounded-full"
-              />
-            </div>
-            <p className="name text-xl font-bold mt-4">葉山 隼人</p>
-            <p className="text-sm mt-4 text-center">
-              これを買ったら学校の成績が上がって部活でもレギュラーになれました、ついでに彼女もできました
-              <br />
-              友達にも勧めたところ、テストの点数が上がったようです。
-            </p>
-          </div>
-
-          <div className="slick_slide item justify-center flex flex-col items-center py-10">
-            <div className="h-[100px] w-[100px] rounded-full ">
-              <img
-                src="https://images.unsplash.com/photo-1461800919507-79b16743b257?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
-                alt=""
-                className="w-full h-full object-cover rounded-full"
-              />
-            </div>
-            <p className="name text-xl font-bold mt-4">葉山 隼人</p>
-            <p className="text-sm mt-4 text-center">
-              これを買ったら学校の成績が上がって部活でもレギュラーになれました、ついでに彼女もできました
-              <br />
-              友達にも勧めたところ、テストの点数が上がったようです。
-            </p>
-          </div>
+          {data.map((item) => {
+            return (
+              <div className="slick_slide item justify-center flex flex-col items-center py-10">
+                <div className="h-[100px] w-[100px] rounded-full ">
+                  <img
+                    src={item.client_img}
+                    alt=""
+                    className="w-full h-full object-cover rounded-full"
+                  />
+                </div>
+                <p className="name text-xl font-bold mt-4">
+                  {item.client_title}
+                </p>
+                <p className="text-sm mt-4 text-center">
+                  {item.client_description}
+                </p>
+              </div>
+            );
+          })}
         </Slider>
       </div>
     </div>

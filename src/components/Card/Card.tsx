@@ -7,7 +7,7 @@ type Props = {
 };
 const Card = (props: Props) => {
   return (
-    <div className="bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 hover:shadow-2xl">
+    <div className="bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 hover:shadow-2xl break-words">
       <a href="#">
         <img className="rounded-t-lg" src={props.image} alt="" />
       </a>
@@ -17,7 +17,7 @@ const Card = (props: Props) => {
             {props.title}
           </h5>
         </a>
-        <p className="mb-3 font-normal text-gray-500 dark:text-gray-400">
+        <p className="mb-3 font-normal text-gray-500 dark:text-gray-400 overflow-ellipsis">
           {props.desc}
         </p>
         <a

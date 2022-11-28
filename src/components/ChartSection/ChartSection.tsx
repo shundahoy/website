@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import {
   Chart as ChartJS,
@@ -12,6 +12,8 @@ import {
 import { Bar } from "react-chartjs-2";
 // import faker from "faker";
 import { faker } from "@faker-js/faker";
+import axios from "axios";
+import { setLabels } from "react-chartjs-2/dist/utils";
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -30,35 +32,62 @@ const options = {
   },
 };
 
-const labels = [
-  "HTML",
-  "CSS",
-  "jQuery",
-  "Vanila JS",
-  "React.js",
-  "Next.js",
-  "PHP/Laravel",
-];
-
-const data = {
-  labels,
-  datasets: [
-    {
-      label: "",
-      data: labels.map(() => faker.datatype.number({ min: 0, max: 100 })),
-      backgroundColor: "#555",
-    },
-  ],
+type DATA = {
+  id: number;
+  x_data: string;
+  y_data: string;
+  created_at: any;
+  updated_at: any;
 };
 
 const ChartSection = () => {
+  const [data, setData] = useState<DATA[]>([
+    {
+      id: 0,
+      x_data: "",
+      y_data: "",
+      created_at: "",
+      updated_at: "",
+    },
+  ]);
+
+  const [labels, setLabels] = useState<string[]>([]);
+  const [dataSet, setDataSet] = useState<string[]>([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await axios
+        .get("http://127.0.0.1:8000/api/chartdata")
+        .then((res) => {
+          setData(res.data);
+          setLabels(res.data.map((item: DATA) => item.x_data));
+          setDataSet(res.data.map((item: DATA) => item.y_data));
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
+    fetchData();
+  }, []);
+  if (!data) return <></>;
   return (
     <div className="mt-20 px-4 sm:p-0">
       <h2 className="text-center text-2xl font-bold">使用技術</h2>
       <div className="mx-auto h-[3px] w-[5em] bg-gray-700 mt-2"></div>
       <div className="container mx-auto grid gap-4 grid-cols-1 md:grid-cols-2 mt-10 place-items-center">
         <div className="w-full">
-          <Bar options={options} data={data} />
+          <Bar
+            options={options}
+            data={{
+              labels,
+              datasets: [
+                {
+                  label: "",
+                  data: dataSet,
+                  backgroundColor: "#555",
+                },
+              ],
+            }}
+          />
         </div>
         <div>
           <div className="md:pl-12 mb-10 md:mb-0 pb-10">
