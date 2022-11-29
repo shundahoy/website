@@ -16,65 +16,10 @@ const ProjectPage = () => {
         <div className="container mx-auto grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 px-4">
           <div>
             <Card
+              id={1}
               title="実績1"
               desc="このページでは、弊社の実績をご紹介しております。弊社では、様々なお客様に満足していただけるよう、幅広いサービスを行っております。"
               image="https://images.unsplash.com/photo-1661961111184-11317b40adb2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80"
-            />
-          </div>
-          <div>
-            <Card
-              title="実績2"
-              desc="このページでは、弊社の実績をご紹介しております。弊社では、様々なお客様に満足していただけるよう、幅広いサービスを行っております。"
-              image="https://images.unsplash.com/photo-1666892938639-11885e08fd73?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-            />
-          </div>
-          <div>
-            <Card
-              title="実績3"
-              desc="このページでは、弊社の実績をご紹介しております。弊社では、様々なお客様に満足していただけるよう、幅広いサービスを行っております。"
-              image="https://images.unsplash.com/photo-1523726491678-bf852e717f6a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-            />
-          </div>
-          <div>
-            <Card
-              title="実績1"
-              desc="このページでは、弊社の実績をご紹介しております。弊社では、様々なお客様に満足していただけるよう、幅広いサービスを行っております。"
-              image="https://images.unsplash.com/photo-1661961111184-11317b40adb2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80"
-            />
-          </div>
-          <div>
-            <Card
-              title="実績2"
-              desc="このページでは、弊社の実績をご紹介しております。弊社では、様々なお客様に満足していただけるよう、幅広いサービスを行っております。"
-              image="https://images.unsplash.com/photo-1666892938639-11885e08fd73?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-            />
-          </div>
-          <div>
-            <Card
-              title="実績3"
-              desc="このページでは、弊社の実績をご紹介しております。弊社では、様々なお客様に満足していただけるよう、幅広いサービスを行っております。"
-              image="https://images.unsplash.com/photo-1523726491678-bf852e717f6a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-            />
-          </div>
-          <div>
-            <Card
-              title="実績1"
-              desc="このページでは、弊社の実績をご紹介しております。弊社では、様々なお客様に満足していただけるよう、幅広いサービスを行っております。"
-              image="https://images.unsplash.com/photo-1661961111184-11317b40adb2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80"
-            />
-          </div>
-          <div>
-            <Card
-              title="実績2"
-              desc="このページでは、弊社の実績をご紹介しております。弊社では、様々なお客様に満足していただけるよう、幅広いサービスを行っております。"
-              image="https://images.unsplash.com/photo-1666892938639-11885e08fd73?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-            />
-          </div>
-          <div>
-            <Card
-              title="実績3"
-              desc="このページでは、弊社の実績をご紹介しております。弊社では、様々なお客様に満足していただけるよう、幅広いサービスを行っております。"
-              image="https://images.unsplash.com/photo-1523726491678-bf852e717f6a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
             />
           </div>
         </div>

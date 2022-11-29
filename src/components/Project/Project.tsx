@@ -49,6 +49,7 @@ const Project = () => {
         {data.map((item) => {
           return (
             <Card
+              id={item.id}
               title={item.project_name}
               desc={item.project_description}
               image={item.img_one}

@@ -1,13 +1,53 @@
-import React from "react";
-
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+type DATA = {
+  id: number;
+  img_one: string;
+  img_two: string;
+  project_name: string;
+  project_description: string;
+  project_features: string;
+  live_preview: string;
+  created_at: any;
+  updated_at: any;
+};
 const ProjectDetail = () => {
+  const params = useParams();
+  const [data, setData] = useState<DATA>({
+    id: 0,
+    img_one: "string",
+    img_two: "string",
+    project_name: "string",
+    project_description: "string",
+    project_features: "string",
+    live_preview: "string",
+    created_at: "",
+    updated_at: "",
+  });
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await axios
+        .post("http://127.0.0.1:8000/api/projectdetail", {
+          id: params.id,
+        })
+        .then((res) => {
+          setData(res.data[0]);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
+    fetchData();
+  }, []);
+  if (!data) return <></>;
   return (
     <div className="mt-20">
       <div className="container mx-auto grid gap-8 grid-cols-1 lg:grid-cols-2 px-4 items-center">
         <div className="relative pr-10">
           <div className="block relative z-10 w-full sm:h-[600px] rounded-2xl">
             <img
-              src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+              src={data.img_one}
               alt=""
               className="h-full w-full object-cover rounded-2xl"
             />
@@ -17,10 +57,10 @@ const ProjectDetail = () => {
 
         <div className="">
           <h2 className="text-3xl leading-[1.6] font-bold">
-            この部分はコンテンツ見出しとなります。文字数は約○○文字前後となります。
+            {data.project_name}
           </h2>
-          <p className="text-base mt-4">
-            イメージ確認用のサンプル文言になります。任意のテキストに置き換えてお使いください。イメージ確認用のサンプル文言になります。任意のテキストに置き換えてお使いください。
+          <p className="text-base mt-4 break-words">
+            {data.project_description}
           </p>
 
           <div className="w-full mt-8">
